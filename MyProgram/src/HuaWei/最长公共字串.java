@@ -30,6 +30,7 @@ public class 最长公共字串 {
 		int[][] len =new int[arr1.length][arr2.length];
 		int maxL =0;
 		int index=0;
+		//表示已s1下标为i，s2下标为j为结尾的最长公共字串
 		for (int i = 0; i < arr1.length; i++) {
 			for (int j = 0; j < arr2.length; j++) {
 				if (arr1[i]==arr2[j]) {

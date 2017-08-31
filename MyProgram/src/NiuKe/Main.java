@@ -9,29 +9,25 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		String index = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		System.out.println(index.substring(1,2));
-		String aString = "89abc";
-		System.out.println(Integer.valueOf(aString, 16));
-		/*while(in.hasNext()){
-			int size  = in.nextInt();
-			ArrayList<Integer> scores = new ArrayList<>();
-			for (int i = 0; i < size; i++) {
-				scores.add(in.nextInt());
-			}
-			ArrayList<Integer> list = new ArrayList<>();
-			getTotal(scores, size, list);
-			int count=0;
-			for (int i = 0; i < list.size(); i++) {
-				count+=list.get(i);
-			}
-			System.out.println(count);
-		}*/
+		String aString = "104680767";
+		System.out.println(numToString(aString));
 		
 		
 	}
-	
+	public static String numToString(String s){
+		String dict = "abcdefghijklmnopqrstuvwxyz";
+		int input = Integer.valueOf(s);
+		String out = "";
+		int left  = 0;
+		while(input!=0){
+			left = input%26;
+			input = input/26;
+			out = dict.charAt(left-1)+out;
+			
+		}
+		
+		return out;
+	}
 	public static void getTotal(ArrayList<Integer> scores,int size,ArrayList<Integer> list){
 		if (size==1) {
 			if (scores.get(0)!=0) {
