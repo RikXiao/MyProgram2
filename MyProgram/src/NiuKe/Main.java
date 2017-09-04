@@ -1,5 +1,8 @@
 package NiuKe;
 
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.ServerSocketChannel;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,10 +12,25 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String aString = "104680767";
-		System.out.println(numToString(aString));
+		String aString = "#1#2#";
+		System.out.println(aString.substring(2));
+		String [] arrStrings = aString.split("#");
+		System.out.println(1);
+			
 		
-		
+	}
+	
+	public static int getint(){
+		int a =0;
+		try {
+			
+			return a+4;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally{
+			a = 1;
+		}
+		return 2;
 	}
 	public static String numToString(String s){
 		String dict = "abcdefghijklmnopqrstuvwxyz";

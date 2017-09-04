@@ -9,7 +9,7 @@ public class 可变k个0的最长连续1的不同方法 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String string = "11101011011";
+		String string = "1110001011011";
 		System.out.println(getMax(string, 1));
 	}
 
