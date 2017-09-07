@@ -1,20 +1,16 @@
 package HuaWei;
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class 快速排序 {
 
 	public static void main(String[] args) {
 
-		Scanner in = new Scanner(System.in);
-		while (in.hasNext()) {
-		    String inputString = in.nextLine();
-		    char[] inputArrs = inputString.toCharArray();
-		    quikSort(inputArrs, 0, inputArrs.length-1);
-		    System.out.println(String.valueOf(inputArrs));
-		}
-		in.close();
+		char[] arr = {'a','b','a'};
+		quikSort(arr, 0, arr.length-1);
+		System.out.println(Arrays.toString(arr));
 	}
 	
 	public static void quikSort(char[] Arrs,int left,int right){
@@ -22,7 +18,7 @@ public class 快速排序 {
 			char pivot = media(Arrs, left, right);
 			int i=left;
 			int j= right-1;
-			while (i<j) {//在只有两个数进行排序的时候需要使用到，因为此时i=j如果执行下面的程序会导致排序错误（主要是++i）
+			while (i<j) {//在只有两个数进行排序的时候需要使用到，因为此时i=j如果执行下面的程序会导致排序错误（主要是--j）
 				while(Arrs[++i]<pivot){}
 				while(Arrs[--j]>pivot){}
 				if (i<j) {
@@ -59,9 +55,10 @@ public class 快速排序 {
 			Arrs[mediaIndex] = Arrs[right];
 			Arrs[right] = tem;
 		}
+		//right放的是最大的
 		char tem = Arrs[mediaIndex];
 		Arrs[mediaIndex]=Arrs[right-1];
-		Arrs[right-1]=tem;
+		Arrs[right-1]=tem;//将枢纽元放在了right-1
 		
 		return tem;
 	}
