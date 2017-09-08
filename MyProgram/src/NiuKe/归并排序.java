@@ -10,6 +10,7 @@ public class 归并排序 {
 		int[] tmp = new int[arr.length];
 		mergeSort(arr, 0, arr.length-1, tmp);
 		System.out.println(Arrays.toString(arr));
+		
 	}
 	
 	public static void mergeSort(int[] arr,int left,int right,int[] tmp){

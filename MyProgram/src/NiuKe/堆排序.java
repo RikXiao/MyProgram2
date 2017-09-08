@@ -7,11 +7,22 @@ public class 堆排序 {
 	/**
 	 * @param args
 	 */
+	public static int a = 0;
+	{
+		a = 1;
+		System.out.println("非静态代码");
+	}
+	public 堆排序(){
+		this(a);//传值的时候静态变量还没变为1
+		System.out.println(a);
+	}
+	public 堆排序(int a){//所以这里接收的参数为0，只是再打印之前，执行了非静态代码，改变了静态变量
+		System.out.println(堆排序.a);
+		System.out.println(a);
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int arr[] = {6,7,6,3,5,7,1,0,36,5,23,12};
-		heapSort(arr);
-		System.out.println(Arrays.toString(arr));
+		new 堆排序();
 	}
 	
 	public static void heapSort(int[] arr){
