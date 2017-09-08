@@ -23,7 +23,7 @@ public class 最大前后缀匹配 {
 				String out = str.substring(0,min)+str;
 				System.out.println(out);
 			}else {
-				System.out.println("ERROR");
+				System.out.println(str+str);
 			}
 		}
 
