@@ -17,7 +17,7 @@ public class 括号匹配 {
 			HashMap<String, Integer> map = new HashMap<>();			
 			System.out.println(getMax(str,map));
 		}
-
+       in.close();
 	}
 
 	public static int getMax(String str, HashMap<String, Integer> map) {
@@ -29,7 +29,7 @@ public class 括号匹配 {
 		}
 		String child = str.replaceFirst("\\(", "");// 首先去掉第一个左括号
 		int total = totalNum(child);// 右括号的个数
-		// 足ge去掉右括号，判断是否合法
+		// 逐ge去掉右括号，判断是否合法
 		String next = "";
 		int sum = 0;
 		for (int i = 1; i <= total; i++) {
